@@ -11,6 +11,7 @@ pipeline{
                 echo "${env.NODE_NAME}"
                 echo "5mo6tx/demo"
                 echo "dcdscds"
+                echo "triggred by webhook"
             }
             
             }
