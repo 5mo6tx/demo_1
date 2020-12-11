@@ -19,8 +19,8 @@ pipeline{
         stage("testing DB"){
             steps{
                  script {
-                    withCredentials([string(credentialsId: 'jenkins-database-username', variable: 'DATABASE_USERNAME')]) {
-                        withCredentials([string(credentialsId: 'jenkins-database-password', variable: 'DATABASE_PASSWORD')]) {
+                    withCredentials([string(credentialsId: 'root', variable: 'DATABASE_USERNAME')]) {
+                        withCredentials([string(credentialsId: 'debezium', variable: 'DATABASE_PASSWORD')]) {
                             def test_database_credentials = buildTestMySQLDatabase {
                                 dbUser = env.DATABASE_USERNAME
                                 dbPass = env.DATABASE_PASSWORD
