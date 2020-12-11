@@ -28,9 +28,10 @@ pipeline{
                             echo 'Test Database Name: ' + test_database_credentials.dbName
                             echo 'Test Username: ' + test_database_credentials.testUsername
                             echo 'Test User Password: ' + test_database_credentials.testUserPassword
-            
+                        }
+                      }
+                 }     
             }
-        
         }
        
         
