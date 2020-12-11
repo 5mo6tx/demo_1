@@ -1,4 +1,4 @@
-
+import groovy.sql.Sql
 pipeline{
     agent any
     stages{
@@ -21,7 +21,6 @@ pipeline{
             steps{
                  script {
                    echo 'eifwh'
-                     import groovy.sql.Sql
                      def sql = Sql.newInstance("jdbc:mysql://ec2-13-58-23-69.us-east-2.compute.amazonaws.com:3306/inventory", "root","debezium", "com.mysql.jdbc.Driver")
                      sql.execute "select count(*) from test1"
                       
