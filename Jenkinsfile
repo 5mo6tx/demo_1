@@ -19,17 +19,7 @@ pipeline{
         stage("testing DB"){
             steps{
                  script {
-                    withCredentials([string(credentialsId: 'root', variable: 'DATABASE_USERNAME')]) {
-                        withCredentials([string(credentialsId: 'debezium', variable: 'DATABASE_PASSWORD')]) {
-                            def test_database_credentials = buildTestMySQLDatabase {
-                                dbUser = env.DATABASE_USERNAME
-                                dbPass = env.DATABASE_PASSWORD
-                            }
-                            echo 'Test Database Name: ' + test_database_credentials.dbName
-                            echo 'Test Username: ' + test_database_credentials.testUsername
-                            echo 'Test User Password: ' + test_database_credentials.testUserPassword
-                        }
-                      }
+                    sh 'mysql -u root -p'
                  }     
             }
         }
