@@ -19,7 +19,7 @@ pipeline{
         stage("testing DB"){
             steps{
                  script {
-                    sh 'mysql -u root -p'
+                    bat 'mysql -u root -p'
                  }     
             }
         }
